@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <link rel="stylesheet" type="text/css" href="myStyle.css">   
+    <script type="text/javascript" src="validate.js"></script>
+ </head>
+  <body>
+    
+    <form id="form" onsubmit="validateForm()">
+      <h1>Sign Up</h1>
+      <label>First Name:</label>
+      <input type="text" placeholder="First Name" name="fname"><br><br>
+      <label>Last Name:</label>
+      <input type="text" placeholder="Last Name" name="lname"><br><br>
+      <label>Password:</label>
+      <input type="password" placeholder="Password" name="password"><br><br>
+      <label>Confirm-Password:</label>
+      <input type="password"  placeholder="Re-type Password" name="cpassword"><br><br>
+      <label>Email:</label>
+      <input type="text"  placeholder="Email" name="email"><br><br>
+      <label>Phone number:</label>
+      <input type="text"  placeholder="phone number" name="number"><br><br>
+      <label>Address:</label>
+      <textarea rows="5" cols="50" placeholder="Enter address here!"></textarea><br><br>
+      
+      <label>Gender:</label> <input type="radio" name="gender" value="Male"> Male
+      <input type="radio" name="gender" value="Female"> Female <br><br>
+      <label>Date of Birth:</label>
+      <input type="text" name="date" placeholder="MM/DD/YYYY"><br><br>
+           <input type="submit" value="Submit" >
+   
+      </form>
+  </body>
+</html>
