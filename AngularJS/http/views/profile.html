@@ -1,0 +1,14 @@
+<h1>This is profile page</h1>
+<span>{{profile}}</span>
+<table>
+	<tr>
+		<td>Abbr</td>
+		<td>Area </td>
+		<td>Largest city</td>
+	</tr>
+	<tr ng-repeat="info in singlestateinfo">
+		<td>{{info.abbr}}</td>
+		<td>{{info.area}}</td>
+		<td>{{info.largest_city}}</td>
+	</tr>
+</table>

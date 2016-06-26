@@ -1,0 +1,24 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>watch service</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+  $scope.name="javascript";
+  $scope.count=0;
+  //The second argument passed to $watch() is known as a listener function, and is called whenever the value of name changes.It’s the $digest cycle where the watchers are fired. When a watcher is fired, AngularJS evaluates the scope model, and if it has changed then the corresponding listener function is called.
+  $scope.$watch("name",function(newValue,oldValue){
+  	$scope.count = $scope.count+1;
+  });
+
+});
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+ 	<input type="text" ng-model="name"/>
+ 	<span>{{name}}</span>
+ 	<spna>Change Count:{{count}}</span>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<html ng-app="app">
+<head>
+    <title>ngGallery</title>
+    <!-- referece links for the style files-->
+    <link rel="stylesheet" type="text/css" href="src/css/screen.css">
+    <link rel="stylesheet" type="text/css" href="src/css/ngGallery.css">
+</head>
+<body ng-controller="Ctrl as ctrl">
+
+<div class="content">
+	<h3>ng-Gallery Example</h3>
+    <ng-gallery images="ctrl.images" thumbs-num="6"></ng-gallery>
+</div>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0/angular.min.js"></script>
+<script type="text/javascript" src="src/js/ngGallery.js"></script>
+<script type="text/javascript" src="app.js"></script>
+</body>
+</html>

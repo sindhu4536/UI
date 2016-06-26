@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>ng-checked example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+    $scope.mystatus =[{Id:0,Name:'---select status---'},
+                      {Id:1,Name:'Busy'},
+                      {Id:2,Name:'Offline'},
+                      {Id:3,Name:'available'},
+                      {Id:4,Name:'Idle'}];
+    $scope.makeselected = $scope.mystatus[2].Id;
+  });
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+  Show Selected:<select ng-model="makeselected" ng-options="stat.Id as stat.Name for stat in mystatus"></select>
+ 	
+</body>
+</html>

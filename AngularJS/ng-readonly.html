@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>ng-readonly example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+  $scope.firstName="sindhuja";
+  $scope.lastName="sura";
+  $scope.value=false;
+
+});
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+ 	<p>FirstName:<input type="text" ng-readonly="true" ng-model="firstName"/></p>
+  <p>LastName:<input type="text" ng-readonly="{{value}}" ng-model="lastName"/></p>
+</body>
+</html>

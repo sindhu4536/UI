@@ -1,0 +1,20 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>number filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var app = angular.module("app",[]);
+  app.controller("ctrl",function($scope){
+   $scope.value = 1234.56789;
+  });
+  </script>
+ 
+ </head>
+ <body ng-controller="ctrl">
+  Enter a number:<input ng-model="value"/><br>
+  Default Formatting:<span>{{value | number}}</span><br>
+  No fractions:<span>{{value | number:0}}</span><br>
+  Negative Number:<span>{{-value | number:4}}<br>
+</body>
+</html>

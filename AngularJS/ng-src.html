@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<title>ng-src example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script>
+var app = angular.module("app",[]);
+app.controller("ctrl",function($scope){
+		$scope.name="sindhuja.png";
+
+});
+</script>
+</head>
+<body ng-controller="ctrl">
+<img src="C:\Users\sindhu\Pictures\{{name}}" alt="sindhu"/>
+</body>
+
+</html>

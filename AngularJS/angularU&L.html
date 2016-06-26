@@ -1,0 +1,19 @@
+<!doctype html>
+<html ng-app="app">
+<head >
+  <title>Angular upper and lower</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ </head>
+ <script>
+ var app = angular.module("app",[]);
+ app.controller("ctrl",function($scope){
+$scope.x1="angular";
+$scope.x2=angular.lowercase("SURA");
+ });
+ </script>
+
+ <body ng-controller="ctrl">
+ <p>{{x1 |uppercase}}</p>
+ <p>{{x2}}</p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>ng-checked example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+  $scope.getCheckedFalse = function(){
+  	return true;
+  };
+  $scope.getCheckedTrue = function(){
+  	return true;
+  }
+
+});
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+ 	<input type="checkbox" ng-checked="getCheckedFalse()">female</input>
+ 	<input type="checkbox" ng-checked="getCheckedTrue()"/>male</input>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+	<title>ng-show example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script>
+	 var app = angular.module("myapp",[]);
+	 app.controller("ctrl",function($scope){
+	 	$scope.firstName = "Sindhuja";
+	 	$scope.lastName = "Sura";
+	 	$scope.myvalue = true;
+
+	 	$scope.toggleShow = function(){
+	 		$scope.myvalue = !$scope.myvalue;
+	 	};
+
+	 });
+	</script>
+
+</head>
+<body>
+<div ng-controller="ctrl">
+<button ng-click="toggleShow()">Toggle Show</button>
+<p ng-show="myvalue">
+First Name:
+<input type="text" ng-model="firstName"><br>
+Last Name:
+<input type="text" ng-model="lastName"><br>
+Full Nmae: {{firstName + " " + lastName}}
+</p>
+</body>
+</html>

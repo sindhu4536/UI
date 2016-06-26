@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+    <title>{{mytitle}}</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js" 
+	        type="text/javascript"></script>
+	<script src="app.js"></script>
+</head>
+<body >
+	<div ng-controller="myctrl">
+		<a href="#home">Home</a>
+	</div>
+	<div ng-controller="profile">
+		<a href="#profile">Profile</a>
+	</div>
+
+	<div>
+		<div ng-view></div>
+	</div>
+</body>
+</html>

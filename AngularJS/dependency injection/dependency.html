@@ -1,0 +1,45 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+	<title>dependency example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script>
+	 var app = angular.module("myapp",[]);
+	 app.value("myvalue",8);
+	 app.controller("callcontroller",function($scope,Mathfactory,myvalue,Mathser){
+	 	$scope.number = myvalue;
+	 	$scope.square = function(){
+	 		$scope.result = $scope.number*$scope.number;
+	 		$scope.result = Mathfactory.multiply($scope.number,$scope.number);
+	 	    $scope.result = Mathser.multi($scope.number,$scope.number);
+	 	}
+	 	    
+	 	
+	 });
+	 //factories are created in this way
+	 app.factory("Mathfactory",function(){
+	 	var fact = {};
+	 	fact.multiply = function(x,z){
+             return x*z;
+	 	}
+	 	return fact;
+	 });
+	 //service are created in this way
+	 app.service("Mathser",function(Mathfactory){
+	 	this.multi=function(a,b){
+	 	return Mathfactory.multiply(a,b);
+	 }
+
+	 });
+
+
+	</script>
+</head>
+<body ng-controller="callcontroller">
+	<p>Enter a number:<input type="number" ng-model="number"/>
+	<button ng-click="square()">x<sup>2</sup></button>
+	<p>Result from controller:{{result}}</p>
+	<p>Result from factory:{{result}}</p>
+	<p>Result from service:{{result}}</p>
+</body>
+</html>

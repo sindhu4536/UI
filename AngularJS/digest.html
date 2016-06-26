@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>digest service</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+  $scope.date = new Date();
+  $scope.updateTime = function(){
+    $scope.date = new Date();
+  };
+  document.getElementById("updateMytime").addEventListener("click",function(){
+       $scope.date = new Date();
+       $scope.$digest();
+  });
+
+});
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+ 	<input type="button" ng-click="updateTime()" value="update time using ng-click"/>
+  <input type="button" value="update time" id="updateMytime"/>
+  <span>{{date}}</span>
+</body>
+</html>

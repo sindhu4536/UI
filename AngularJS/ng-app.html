@@ -1,0 +1,22 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>First AngularJS example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+  $scope.displayname = function(){
+  $scope.myname = "first AngularJS application";
+};
+
+});
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+ 	<input type="text" ng-model="myname"></input>
+ 	<span ng-bind="myname"></span>
+ 	<input type="button" value="Click Me!" ng-dblclick="displayname()"/>
+ 	
+</body>
+</html>

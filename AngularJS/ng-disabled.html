@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>ng-disabled example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("app",[]);
+  myapp.controller("myctrl",function($scope){
+  $scope.mycondition = false;
+  $scope.TextBoxDisabled = function(){
+  	$scope.mycondition = !$scope.mycondition;  
+  
+};
+
+});
+  </script>
+ </head>
+ <body ng-controller="myctrl">
+ 	<input type="button" ng-click="TextBoxDisabled()" value="Toggle Disabled"/>
+ 	<input type="text" ng-disabled="!mycondition"/>
+ 	
+</body>
+</html>

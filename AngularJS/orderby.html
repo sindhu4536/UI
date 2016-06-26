@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>orderby filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+ </head>
+ <body>
+  <div ng-app=""ng-init="persons=[{firstName:'Sindhuja',lastName:'Sura'},
+                                              {firstName:'Mounika',lastName:'Sura'},
+                                              {firstName:'Harika',lastName:'Burugu'}]">
+ <label>Search:</label><input type="text" ng-model="searchtext"/>
+ <table>
+  <thead>
+    <tr>
+      <td>First Name</td>
+      <td>Last Name</td>
+    </tr>
+    </thead>
+    <tbody><tr ng-repeat="person in persons| orderBy:'firstName' | filter:searchtext ">
+      <td>{{person.firstName}}</td>
+      <td>{{person.lastName}}</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+</body>
+</html>

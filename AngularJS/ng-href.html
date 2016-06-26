@@ -1,0 +1,15 @@
+<!doctype html>
+<html ng-app="app">
+<title>ng-href example</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+<script>
+var app = angular.module("app",[]);
+app.controller("ctrl",function($scope){
+$scope.value = "http://www.google.com";
+});
+</script>
+</head>
+<body ng-controller="ctrl">
+ <a ng-href="{{value}}" target="_blank">google</a>
+</body>
+</html>

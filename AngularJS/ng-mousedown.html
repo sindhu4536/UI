@@ -1,0 +1,18 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>ng-mousedown example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var app = angular.module("app",[]);
+  app.controller("myctrl",function($scope){
+
+});
+  </script>
+  
+ </head>
+ <body ng-controller="myctrl">
+   <button ng-mousedown="count=count+1" ng-init="count=0">Increment(on mouse down)</button>
+   count:{{count}}
+ 	</body>
+</html>

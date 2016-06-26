@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+	<title>interval service example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+</head>
+<body ng-app ="app" ng-controller="ctrl">
+	<script type="text/javascript">
+	var app = angular.module("app",[]);
+	app.controller("ctrl",function($scope,$interval,$filter){
+		//Initiate the timer object
+		$scope.Timer = null;
+		//Timer start funcion
+		$scope.startTimer = function(){
+			//Timer start message
+			$scope.message ="Time started :";
+			//display current time
+			//Initalize the timer to run for every 1000 seconds
+			$scope.Timer = $interval(function(){
+				var time = $filter('date')(new Date(),'HH:mm:ss');
+				$scope.message="Timer Ticked"+time;
+			},1000);
+        };
+        //Timer stop function
+        $scope.stopTimer = function(){
+        	$scope.message ="Timmer stopped";
+        	if(angular.isDefined($scope.Timer)){
+        		$interval.cancel($scope.Timer);
+        	}
+        };
+    });
+	</script>
+<div>
+	<h1>$interval service demo</h1>
+	<div ng-bind="message"></div><br>
+	<button ng-click="startTimer()">Start Time!</button>
+	<button ng-click="stopTimer()">Stop Time!</button>
+</div>
+</body>
+</html>

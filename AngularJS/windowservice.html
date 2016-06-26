@@ -1,0 +1,35 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+	<title>window service example</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script>
+    var app = angular.module("myapp",[]);
+    app.controller("ctrl",function($scope,$window){
+    	$scope.displayAlert = function(message){
+    		$window.alert(message);
+    	};
+    	$scope.displayPrompt = function(){
+    		var name = $window.prompt("Enter your name ");
+    		$window.alert("Hello "+name);
+
+    	};
+    	$scope.display = function(){
+    		$window.open("ng-src.html");
+    	};
+    	$scope.close = function(){
+    		$window.close("ng-src.html");
+    	}
+    });
+    </script>
+    
+  </head>
+  <body ng-controller="ctrl">
+  <h1>Angular JS $window Service Demo</h1>
+  <button ng-click="displayAlert('Hello world !')">Display Alert!</button>
+  <button ng-click="displayPrompt()">Display Prompt</button>
+  <button ng-click="display()">Display!</button>
+  <button ng-click="close()">Close</button>
+
+  </body>
+  </html>

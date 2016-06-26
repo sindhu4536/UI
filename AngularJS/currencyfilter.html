@@ -1,0 +1,21 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+  <title>uppercase and lowercase filter</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var app = angular.module("app",[]);
+  app.controller("ctrl",function($scope){
+   $scope.cost =10;
+   $scope.quantity=2;
+  });
+  </script>
+ 
+ </head>
+ <body ng-controller="ctrl">
+  cost:    <input type="number" ng-model="cost"/><br>
+  quantity:<input type="number" ng-model="quantity"/><br>
+  <span>{{ cost*quantity | currency}}</span><br>
+  <span>{{ cost*quantity | currency:"&#2352"}}
+</body>
+</html>

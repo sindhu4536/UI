@@ -1,0 +1,16 @@
+<h1>This is home page</h1>
+<span>{{home}}</span>
+<table>
+	<tr>
+		<td>State Name</td>
+		<td>Capital</td>
+	</tr>
+	<tr ng-repeat="states in stateinfo">
+		<td>
+			<a href="#profile/{{states.name}}">{{states.name}}</a>
+		</td>
+		<td>
+			{{states.capital}}
+		</td>
+	</tr>
+</table>

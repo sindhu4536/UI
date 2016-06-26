@@ -1,0 +1,23 @@
+<!doctype html>
+<html ng-app="myapp">
+<head>
+  <title>ng-init example</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+  <script>
+  var myapp = angular.module("myapp",[]);
+  myapp.controller("myctrl",function($scope){
+  	  $scope.init = function(){
+      $scope.names = [{fname:"sindhu",lname:"sura" },{fname:"mouni",lname:"sura"}];
+  	};
+
+  });
+  </script>
+</head>
+<body ng-controller="myctrl">
+<div ng-init="init()">
+	<ol>
+		<li ng-repeat="name in names">{{ name.fname + " " + name.lname }} </li>
+	</ol>
+</div>
+</body>
+</html>
