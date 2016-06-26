@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script> 
+    $(document).ready(function(){
+        $("#down").click(function(){
+            $("#panel2").slideDown("fast");
+            $("#panel").slideDown("slow",function(){
+               alert("slide down transition complete");
+           });
+        });
+    });
+    </script>
+    
+    <style> 
+    #panel,#panel2{
+        padding: 5px;
+        text-align: center;
+        background-color: #c2c2a3;
+        border: solid 1px #c3c3c3;
+        display:none;
+
+    }
+    #panel2{
+     font-size:30px;
+     font-family:Times New Roman;
+ }
+
+ p {
+    background-color:#c2c2a3;
+    color:black;
+    border-radius: 5px;
+    width:250px;
+    height:50px;
+    font-size:30px;
+    text-align:center;
+}
+
+</style>
+</head>
+<body>
+    <p>Slide Down Demo</p>
+    <button id="down">Slide down!</button>
+    <div id="panel"><img src="http://jonraasch.com/img/slideshow/jquery.png"/></div>
+    <div id="panel2"><b>jQuery-write less do more</b><div>
+    </body>
+    </html>

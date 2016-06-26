@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+   <script>
+   $(document).ready(function(){
+     $("button").click(function(){
+       $("#div1").fadeToggle('fast',function(){
+         alert('fade toggle transition is completed');
+      });
+    });
+  });
+   </script>
+   <style>
+   p {
+      background-color:#ebebe0;
+      width:200px; 
+      text-align:center;
+      border:3px solid black;
+   }
+   
+   
+   </style> 
+</head>
+<body>
+
+   <p>Fade Toggle Demo</p>
+
+   <button>Toggle</button><br><br>
+
+   <div id="div1" style="width:80px;height:80px;"><img src="http://blogs.sitepointstatic.com/images/tech/114-jquery-plugin.jpg"/></div>
+   <br>
+
+
+</body>
+</html>
